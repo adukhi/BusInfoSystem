@@ -1,0 +1,13 @@
+centos 7 
+방화벽 해제
+systemctl stop firewalld
+
+리부팅시 방화벽 실행 하지 않게 하기
+systemctl disable firewalld
+
+
+mysql -u root -p
+
+MariaDB [(none)]> create user 'tester'@'%' identified by '1111';  
+MariaDB [(none)]> grant all privileges on demo.* to tester@'%'; 
+MariaDB [(none)]> flush privileges;  
